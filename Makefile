@@ -1,6 +1,9 @@
-.PHONY: all hello primes
+.PHONY: all setup hello primes
 
-all: hello primes
+all: setup hello primes
+
+setup:
+	mkdir -p classes
 
 hello:
 	time clj -M:hello-dynamic
