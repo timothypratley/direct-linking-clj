@@ -1,0 +1,16 @@
+{:paths   ["src" "classes"]
+ :deps    {org.clojure/clojure {:mvn/version "1.11.1"}}
+ :aliases {:hello-dynamic  {:main-opts ["-m" "direct.hello"]}
+           :hello-static   {:main-opts ["-m" "direct.hello"]
+                            :jvm-opts  ["-Dclojure.compiler.direct-linking=true"
+                                        "-Dclojure.compiler.elide-meta=[:doc :file :line :added]"]}
+           :hello-compile  {:main-opts ["-e" "(compile 'direct.hello)"]
+                            :jvm-opts  ["-Dclojure.compiler.direct-linking=true"
+                                        "-Dclojure.compiler.elide-meta=[:doc :file :line :added]"]}
+           :primes-dynamic {:main-opts ["-m" "direct.primes"]}
+           :primes-static  {:main-opts ["-m" "direct.primes"]
+                            :jvm-opts  ["-Dclojure.compiler.direct-linking=true"
+                                        "-Dclojure.compiler.elide-meta=[:doc :file :line :added]"]}
+           :primes-compile {:main-opts ["-e" "(compile 'direct.primes)"]
+                            :jvm-opts  ["-Dclojure.compiler.direct-linking=true"
+                                        "-Dclojure.compiler.elide-meta=[:doc :file :line :added]"]}}}
